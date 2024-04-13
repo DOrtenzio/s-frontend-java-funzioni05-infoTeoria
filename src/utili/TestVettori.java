@@ -32,7 +32,7 @@ public class TestVettori {
         if (Vettori.ricercaBinaria(a,el2)==-1)
             System.out.println("Elemento non trovato");
         else
-            System.out.println("Elemento trovato in posizione "+Vettori.ricercaBinaria(a,el));
+            System.out.println("Elemento trovato in posizione "+Vettori.ricercaBinaria(a,el2));
 
     }
 }

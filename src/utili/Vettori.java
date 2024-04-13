@@ -1,8 +1,9 @@
 package utili;
 public class Vettori {
     public static void seleSortAsc (int [] a){
-        int posmin=0,temp;
-        for (int i=0;i<a.length-2;i++){
+        int posmin,temp;
+        for (int i=0;i<a.length;i++){
+            posmin=i;
             for (int j=i+1;j<a.length;j++){
                 if (a[posmin]>a[j])
                     posmin=j;
@@ -13,8 +14,9 @@ public class Vettori {
         }
     }
     public static void seleSortDisc ( int [] a){
-        int posmax=0,temp;
+        int posmax,temp;
         for (int i=a.length-1;i>0;i--){
+            posmax=i;
             for (int j=i-1;j>=0;j--){
                 if (a[posmax]>a[j])
                     posmax=j;
@@ -35,17 +37,20 @@ public class Vettori {
         return pos;
     }
     public static int ricercaBinaria ( int [] a, int elemento){
+        Vettori.seleSortAsc(a);
         int pos=-1;
         int primo=0,ultimo=a.length-1,medio;
         while (primo<=ultimo){
-            medio=(primo+ultimo)/2;    //Reistituisco il punto medio ogni volta
+            medio=(primo+ultimo)/2;
             if (elemento==a[medio]){
                 pos=medio;
                 break;
-            } else if (elemento<a[medio])
+            } else if (elemento < a[medio]){
                 ultimo=medio-1;
-            else
-                primo=medio+1;
+            }
+            else {
+                primo = medio + 1;
+            }
         }
         return pos;
     }
