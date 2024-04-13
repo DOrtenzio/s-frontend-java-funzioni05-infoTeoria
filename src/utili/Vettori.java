@@ -1,6 +1,6 @@
 package utili;
 public class Vettori {
-    public static void seleSOrtAsc (int [] a){
+    public static void seleSortAsc (int [] a){
         int posmin=0,temp;
         for (int i=0;i<a.length-2;i++){
             for (int j=i+1;j<a.length;j++){
@@ -48,5 +48,12 @@ public class Vettori {
                 primo=medio+1;
         }
         return pos;
+    }
+    public static String stampa(int [] a){
+        String s="";
+        for (int i=0;i<a.length;i++){
+            s=s+a[i]+"\t";
+        }
+        return s;
     }
 }
