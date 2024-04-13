@@ -34,4 +34,19 @@ public class Vettori {
         }
         return pos;
     }
+    public static int ricercaBinaria ( int [] a, int elemento){
+        int pos=-1;
+        int primo=0,ultimo=a.length-1,medio;
+        while (primo<=ultimo){
+            medio=(primo+ultimo)/2;    //Reistituisco il punto medio ogni volta
+            if (elemento==a[medio]){
+                pos=medio;
+                break;
+            } else if (elemento<a[medio])
+                ultimo=medio-1;
+            else
+                primo=medio+1;
+        }
+        return pos;
+    }
 }
