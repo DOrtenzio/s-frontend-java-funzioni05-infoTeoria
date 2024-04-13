@@ -12,4 +12,17 @@ public class Vettori {
             a[posmin]=temp;
         }
     }
+    public static void seleSortDisc ( int [] a){
+        int posmax=0,temp;
+        for (int i=a.length-1;i>0;i--){
+            for (int j=i-1;j>=0;j--){
+                if (a[posmax]>a[j])
+                    posmax=j;
+            }
+            temp=a[i];
+            a[i]=a[posmax];
+            a[posmax]=temp;
+        }
+    }
+
 }
